@@ -1,11 +1,21 @@
 {
     "FirstPost": {
-        "title": "First Post",
+        "title": "Experimenting with SSDC sites",
         "date": "2014-06-01",
         "thumbnail": "",
         "snippet": "Experimenting with SSDC sites. SSDC = Static Server - Dynamic Client This is an experiment in handling completely static sites in the server side but all the behaviour and views generated in the client side.",
         "section": "blog",
         "file":"2014-06-01_FirstPost",
         "path":"2014-06-01_FirstPost.html"
+    },
+    "FirstMusicPost": {
+        "title": "Awesome Music Sheets in Javascript Starting with VexFlow and VexTab",
+        "date": "2014-06-01",
+        "thumbnail": "",
+        "snippet": "",
+        "section": "music",
+        "file":"2014-06-01_VexFlowStarter",
+        "path":"2014-06-01_VexFlowStarter.html"
     }
+
 }
