@@ -24,6 +24,18 @@ mainApp.directive('embedSrc', function () {
   };
 });
 
+mainApp.directive('markdown', function (){
+    //console.log("evaluating markdown");
+    var converter = new Showdown.converter();
+    return {
+        restrict: 'E',
+        link: function (scope, element, attrs) {
+        //console.log("evaluating markdown 2");
+		var htmlText = converter.makeHtml(element.text() || '');
+		element.html(htmlText);
+        }
+    };
+});
 
 ////////////////////////////////////////////////////////////////////////////////
 // VIEWS
@@ -72,16 +84,17 @@ mainApp.config(function($routeProvider, $locationProvider){
 
 
 mainApp.controller("pageController", function($scope, $http, $route, $routeParams, $location){
-    console.log("starting controller page");
+    //console.log("starting controller page");
     $scope.section = $route.current.params.section;
     $scope.post = $route.current.params.post; //only will be used if exists
     
-    console.log("route = ", $route.current.params);
+    //console.log("route = ", $route.current.params);
     
+    //load posts index from json file ... FUTURE replace for somethign better
     $http.get('meta/index.json')
        .then(function(res){
           $scope.posts = res.data;
-          console.log("obtained data = ", res.data);
+          //console.log("obtained data = ", res.data);
         });
     
     $scope.go = function ( path ) {
