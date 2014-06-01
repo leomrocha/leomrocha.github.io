@@ -1,6 +1,8 @@
-var mainApp = angular.module("LeoSite", []);
+var mainApp = angular.module("LeoSite", ["ngRoute"]);
 
-//.controller("ListController", function($scope, $http) {
+////////////////////////////////////////////////////////////////////////////////
+// DIRECTIVES
+////////////////////////////////////////////////////////////////////////////////
 /**
  * AngularJS has a problem with src element in object tags
  * here is a fix found at:
@@ -23,7 +25,38 @@ mainApp.directive('embedSrc', function () {
 });
 
 
-mainApp.controller("MenuHandler", function($scope){
+////////////////////////////////////////////////////////////////////////////////
+// VIEWS
+////////////////////////////////////////////////////////////////////////////////
+mainApp.config(function($routeProvider){
+    $routeProvider
+        .when('/', {
+            templateUrl: 'pages/aboutme.html',
+            controller: 'aboutController'
+        })
+        .when('/about', {
+            templateUrl: 'pages/aboutme.html',
+            controller: 'aboutController'
+        })
+        .when('/blog', {
+            templateUrl: 'pages/blog.html',
+            controller: 'blogController'
+        })
+        .when('/music', {
+            templateUrl: 'pages/music.html',
+            controller: 'musicController'
+        })
+        .when('/projects', {
+            templateUrl: 'pages/projects.html',
+            controller: 'projectsController'
+        })
+    
+});
+
+////////////////////////////////////////////////////////////////////////////////
+// CONTROLLERS
+////////////////////////////////////////////////////////////////////////////////
+/*mainApp.controller("menuHandler", function($scope){
 
     $scope.pages = {"aboutme": "aboutme",
                     "music": "music/main",
@@ -37,4 +70,21 @@ mainApp.controller("MenuHandler", function($scope){
         console.log("Clicking "+ selection);
         $scope.selectedPage = $scope.pages[selection];
     };
+});*/
+
+mainApp.controller("aboutController", function($scope){
+    //TODO
 });
+
+mainApp.controller("blogController", function($scope){
+    //TODO
+});
+
+mainApp.controller("musicController", function($scope){
+    //TODO
+});
+
+mainApp.controller("projectsController", function($scope){
+    //TODO
+});
+
