@@ -36,13 +36,30 @@ mainApp.config(function($routeProvider, $locationProvider){
         .when('/about',{redirectTo: '/'})
         .when('/:section', {
             templateUrl: function($routeParams){
-                return '/pages/'+$routeParams.section+'.html';
+                var path = '/pages/'+$routeParams.section+'.html';
+                //console.log("generating path section = ", path);
+                return path;
             },
             controller: 'pageController'
         })
         .when('/:section/:post', {
-            templateUrl: 'pages/blog_post.html',
-            controller: 'blogController'
+            //templateUrl: 'pages/blog_post.html',
+            //TODO change the following function for the previous one. Add more generic post handling
+            //templateUrl: function($routeParams){
+            //    return '/posts/'+routeParams.section+'/_main.html';
+            //},
+            templateUrl: function($routeParams){
+                //console.log("route params = ", $routeParams);
+                var path = '/posts/'+$routeParams.section+'/'+$routeParams.post+'.html';
+                //console.log("creating path = ", path);
+                return path;
+            },
+            controller: 'pageController'
+            //controller: function($routeParams){
+            //    console.log("controller = ", ctrl);
+            //    var ctrl =  $routeParams.section+'Controller';
+            //    return ctrl;
+            //}
         });
     
     // use HTML5 history API
@@ -57,13 +74,22 @@ mainApp.config(function($routeProvider, $locationProvider){
 ////////////////////////////////////////////////////////////////////////////////
 
 
-mainApp.controller("pageController", function($scope, $http, $route, $routeParams){
-
+mainApp.controller("pageController", function($scope, $http, $route, $routeParams, $location){
+    console.log("starting controller page");
+    $http.get('meta/index.json')
+       .then(function(res){
+          $scope.posts = res.data;
+          console.log("obtained data = ", res.data);
+        });
+    
+    $scope.go = function ( path ) {
+      $location.path( path );
+    };
     
 });
 
 mainApp.controller("blogController", function($scope, $http, $route, $routeParams){
-    //TODO
+
 });
 
 

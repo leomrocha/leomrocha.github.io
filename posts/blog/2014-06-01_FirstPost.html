@@ -1,0 +1,46 @@
+<div>
+<markdown>
+#Experimenting with SSDC sites.
+
+SSDC = Static Server - Dynamic Client
+
+This is an experiment in handling completely static sites in the server side but all the behaviour and views generated in the client side.
+
+
+This experiment has 2 main goals:
+
+1. Experiment a concept I'd like to call SSDC
+2. Make it easy for me to handle a blog
+3. Learning AngularJS
+
+All the experiment is written with AngularJS and is targetting mainly Github.
+
+
+This project was born because I tried to configure Jekyll, but was quite a pain, specially when I needed new behaviours and plugins to be taken in account.
+
+
+The Jekyll installation on Github is nice for afew basic things, but when the need arise to install plugins, either you compile everything before or you are dead.
+
+
+
+##Advantages in relation to static site generators
+
+1. Once all is configured, for writing new posts only pushing the new post file should work.
+2. Will ease the development of new sites. All the 
+3. Flexibility: adding new controllers and ways of handling data is handled in the JS code. No need to touch the backend
+4. Searchability: as everything will be handled in the client side, the idea is to be able to search and filter ANY kind of information.
+
+##Drawbacks
+1. SEO, as everything is dynamically generated, I still don't know how will I manage this.
+
+
+##Development Stages.
+
+This first PoC will not handle too many things, the first idea is to be able to write posts in html code and let the platform handle it.
+An index will be generated (manually or by a small script) in order to give all the data to the frontend for the list and search engine
+
+The second stage will be making the platform check directly the paths on github and automatically generate the index.
+
+</markdown>
+
+</div>
