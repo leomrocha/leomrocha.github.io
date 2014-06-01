@@ -28,28 +28,37 @@ mainApp.directive('embedSrc', function () {
 ////////////////////////////////////////////////////////////////////////////////
 // VIEWS
 ////////////////////////////////////////////////////////////////////////////////
-mainApp.config(function($routeProvider){
+mainApp.config(function($routeProvider, $locationProvider){
     $routeProvider
         .when('/', {
             templateUrl: 'pages/aboutme.html',
             controller: 'aboutController'
         })
-        .when('/about', {
-            templateUrl: 'pages/aboutme.html',
-            controller: 'aboutController'
-        })
-        .when('/blog', {
-            templateUrl: 'pages/blog.html',
+        //.when('/about', {
+        //    templateUrl: 'pages/aboutme.html',
+        //    controller: 'aboutController'
+        //})
+        .when('/:section', {
+            templateUrl: 'pages/blank.html',
             controller: 'blogController'
         })
-        .when('/music', {
-            templateUrl: 'pages/music.html',
-            controller: 'musicController'
+        .when('/:section/:post', {
+            templateUrl: 'pages/blog_post.html',
+            controller: 'blogController'
         })
-        .when('/projects', {
-            templateUrl: 'pages/projects.html',
-            controller: 'projectsController'
-        })
+        //.when('/music', {
+        //    templateUrl: 'pages/music.html',
+        //    controller: 'musicController'
+        //})
+        //.when('/projects', {
+        //    templateUrl: 'pages/projects.html',
+        //    controller: 'projectsController'
+        //})
+        .otherwise({redirectTo: '/'});
+    
+    // use HTML5 history API
+    //I don't want to have pretty URLs if it avoids direct linking
+    //$locationProvider.html5Mode(true);
     
 });
 
@@ -76,15 +85,15 @@ mainApp.controller("aboutController", function($scope){
     //TODO
 });
 
-mainApp.controller("blogController", function($scope){
+mainApp.controller("blogController", function($scope, $http, $route, $routeParams, $compile){
     //TODO
 });
 
-mainApp.controller("musicController", function($scope){
+mainApp.controller("musicController", function($scope, $http, $route, $routeParams, $compile){
     //TODO
 });
 
-mainApp.controller("projectsController", function($scope){
+mainApp.controller("projectsController", function($scope, $http, $route, $routeParams, $compile){
     //TODO
 });
 
