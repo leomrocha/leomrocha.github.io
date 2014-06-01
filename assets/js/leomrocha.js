@@ -43,17 +43,14 @@ mainApp.config(function($routeProvider, $locationProvider){
             controller: 'pageController'
         })
         .when('/:section/:post', {
-            //templateUrl: 'pages/blog_post.html',
+            templateUrl: 'pages/blog_post.html',
             //TODO change the following function for the previous one. Add more generic post handling
             //templateUrl: function($routeParams){
-            //    return '/posts/'+routeParams.section+'/_main.html';
+            //    //console.log("route params = ", $routeParams);
+            //    var path = '/posts/'+$routeParams.section+'/'+$routeParams.post+'.html';
+            //    //console.log("creating path = ", path);
+            //    return path;
             //},
-            templateUrl: function($routeParams){
-                //console.log("route params = ", $routeParams);
-                var path = '/posts/'+$routeParams.section+'/'+$routeParams.post+'.html';
-                //console.log("creating path = ", path);
-                return path;
-            },
             controller: 'pageController'
             //controller: function($routeParams){
             //    console.log("controller = ", ctrl);
@@ -76,6 +73,11 @@ mainApp.config(function($routeProvider, $locationProvider){
 
 mainApp.controller("pageController", function($scope, $http, $route, $routeParams, $location){
     console.log("starting controller page");
+    $scope.section = $route.current.params.section;
+    $scope.post = $route.current.params.post; //only will be used if exists
+    
+    console.log("route = ", $route.current.params);
+    
     $http.get('meta/index.json')
        .then(function(res){
           $scope.posts = res.data;
