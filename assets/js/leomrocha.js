@@ -28,13 +28,61 @@ mainApp.directive('markdown', function (){
     //console.log("evaluating markdown");
     var converter = new Showdown.converter();
     return {
-        restrict: 'E',
+        restrict: 'AEC',
         link: function (scope, element, attrs) {
         //console.log("evaluating markdown 2");
 		var htmlText = converter.makeHtml(element.text() || '');
 		element.html(htmlText);
         }
     };
+});
+
+mainApp.directive('vextab', function($compile){
+    //console.log("rendering vextab");
+    var canvas = document.createElement('canvas');
+
+    renderer = new Vex.Flow.Renderer( canvas,
+                  //Vex.Flow.Renderer.Backends.SVG);
+                  Vex.Flow.Renderer.Backends.CANVAS);
+    artist = new Vex.Flow.Artist(10, 10, 800, {scale: 0.8});
+    vextab = new Vex.Flow.VexTab(artist);
+    return{
+        restrict: 'E',
+        link: function(scope, element, attrs){
+                try {
+                    vextab.reset();
+                    artist.reset();
+                    vextab.parse(element.text());
+                    artist.render(renderer);
+                }
+                catch (e) {
+                    console.log("Error");
+                    console.log(e);
+                }
+         //element.appendChild(canvas);
+         $compile(canvas)(scope);
+         //element.append(canvas);
+         element.replaceWith(canvas);
+         //console.log("vextab processing");
+        }
+    }
+});
+
+mainApp.directive('vexchord', function($compile){
+    //console.log("rendering vextab");
+    return{
+        restrict: 'E',
+        link: function(scope, element, attrs){
+            //console.log("attributes = ",attrs);
+            //console.log(attrs.key);
+            //console.log(attrs.string);
+            //console.log(attrs.shape);
+             var el = createChordElement(createChordStruct(attrs.key, attrs.string, attrs.shape));
+             $compile(el)(scope);
+             element.replaceWith(el);
+             //console.log("finish vexchord processing");
+        }
+    }
 });
 
 ////////////////////////////////////////////////////////////////////////////////
