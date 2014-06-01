@@ -32,32 +32,22 @@ mainApp.config(function($routeProvider, $locationProvider){
     $routeProvider
         .when('/', {
             templateUrl: 'pages/aboutme.html',
-            controller: 'aboutController'
         })
-        //.when('/about', {
-        //    templateUrl: 'pages/aboutme.html',
-        //    controller: 'aboutController'
-        //})
+        .when('/about',{redirectTo: '/'})
         .when('/:section', {
-            templateUrl: 'pages/blank.html',
-            controller: 'blogController'
+            templateUrl: function($routeParams){
+                return '/pages/'+$routeParams.section+'.html';
+            },
+            controller: 'pageController'
         })
         .when('/:section/:post', {
             templateUrl: 'pages/blog_post.html',
             controller: 'blogController'
-        })
-        //.when('/music', {
-        //    templateUrl: 'pages/music.html',
-        //    controller: 'musicController'
-        //})
-        //.when('/projects', {
-        //    templateUrl: 'pages/projects.html',
-        //    controller: 'projectsController'
-        //})
-        .otherwise({redirectTo: '/'});
+        });
     
     // use HTML5 history API
     //I don't want to have pretty URLs if it avoids direct linking
+    //so I take this out
     //$locationProvider.html5Mode(true);
     
 });
@@ -65,35 +55,15 @@ mainApp.config(function($routeProvider, $locationProvider){
 ////////////////////////////////////////////////////////////////////////////////
 // CONTROLLERS
 ////////////////////////////////////////////////////////////////////////////////
-/*mainApp.controller("menuHandler", function($scope){
 
-    $scope.pages = {"aboutme": "aboutme",
-                    "music": "music/main",
-                    "blog": "blog/main",
-                    "projects": "projects/main"
-                    };
 
-    $scope.selectedPage = "aboutme";
+mainApp.controller("pageController", function($scope, $http, $route, $routeParams){
+
     
-    $scope.setSelectedPage = function(selection){
-        console.log("Clicking "+ selection);
-        $scope.selectedPage = $scope.pages[selection];
-    };
-});*/
+});
 
-mainApp.controller("aboutController", function($scope){
+mainApp.controller("blogController", function($scope, $http, $route, $routeParams){
     //TODO
 });
 
-mainApp.controller("blogController", function($scope, $http, $route, $routeParams, $compile){
-    //TODO
-});
-
-mainApp.controller("musicController", function($scope, $http, $route, $routeParams, $compile){
-    //TODO
-});
-
-mainApp.controller("projectsController", function($scope, $http, $route, $routeParams, $compile){
-    //TODO
-});
 
