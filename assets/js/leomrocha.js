@@ -37,6 +37,25 @@ mainApp.directive('markdown', function (){
     };
 });
 
+/*mainApp.directive('vextab', function($compile){
+
+    return{
+        //note, WARNING with E (Element) it breaks the placement of the player
+        restrict: 'EC',  
+        //restrict: 'C',
+        link: function(scope, element, attrs){
+                try {
+                  new Vex.Flow.TabDiv(element);
+                }
+                catch (e) {
+                  console.log("Error: ", e);
+                }
+        }
+    }
+
+});
+*/
+
 mainApp.directive('vextab', function($compile){
     //console.log("rendering vextab");
     var canvas = document.createElement('canvas');
@@ -52,7 +71,7 @@ mainApp.directive('vextab', function($compile){
     }
     vextab = new Vex.Flow.VexTab(artist);
     return{
-        restrict: 'E',
+        restrict: 'CE',
         link: function(scope, element, attrs){
                 try {
                     vextab.reset();
@@ -75,6 +94,7 @@ mainApp.directive('vextab', function($compile){
         }
     }
 });
+
 
 mainApp.directive('vexchord', function($compile){
     //console.log("rendering vextab");
