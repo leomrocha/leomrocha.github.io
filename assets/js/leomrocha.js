@@ -45,6 +45,11 @@ mainApp.directive('vextab', function($compile){
                   //Vex.Flow.Renderer.Backends.SVG);
                   Vex.Flow.Renderer.Backends.CANVAS);
     artist = new Vex.Flow.Artist(10, 10, 800, {scale: 0.8});
+    if (Vex.Flow.Player) {
+        opts = {};
+        //if (options) opts.soundfont_url = options.soundfont_url;
+        player = new Vex.Flow.Player(artist, opts);
+    }
     vextab = new Vex.Flow.VexTab(artist);
     return{
         restrict: 'E',
@@ -54,14 +59,17 @@ mainApp.directive('vextab', function($compile){
                     artist.reset();
                     vextab.parse(element.text());
                     artist.render(renderer);
+                    console.log("artist = ", artist);
                 }
                 catch (e) {
                     console.log("Error");
                     console.log(e);
                 }
+                
          //element.appendChild(canvas);
          $compile(canvas)(scope);
          //element.append(canvas);
+         //element.htmlText(canvas);
          element.replaceWith(canvas);
          //console.log("vextab processing");
         }

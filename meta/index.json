@@ -9,13 +9,22 @@
         "path":"2014-06-01_FirstPost.html"
     },
     "FirstMusicPost": {
-        "title": "Awesome Music Sheets in Javascript Starting with VexFlow and VexTab",
+        "title": "JS Awesome Music Sheets - VexFlow and VexTab",
         "date": "2014-06-01",
         "thumbnail": "",
         "snippet": "",
         "section": "music",
         "file":"2014-06-01_VexFlowStarter",
         "path":"2014-06-01_VexFlowStarter.html"
+    },
+    "AddingMidi": {
+        "title": "Adding MIDI support to VexTab",
+        "date": "2014-06-05",
+        "thumbnail": "",
+        "snippet": "",
+        "section": "music",
+        "file":"2014-06-05_VexTabMidi",
+        "path":"2014-06-05_VexTabMidi.html"
     }
 
 }
