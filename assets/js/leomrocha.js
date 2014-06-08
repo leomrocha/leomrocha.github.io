@@ -37,64 +37,6 @@ mainApp.directive('markdown', function (){
     };
 });
 
-/*mainApp.directive('vextab', function($compile){
-
-    return{
-        //note, WARNING with E (Element) it breaks the placement of the player
-        restrict: 'EC',  
-        //restrict: 'C',
-        link: function(scope, element, attrs){
-                try {
-                  new Vex.Flow.TabDiv(element);
-                }
-                catch (e) {
-                  console.log("Error: ", e);
-                }
-        }
-    }
-
-});
-*/
-
-mainApp.directive('vextab', function($compile){
-    //console.log("rendering vextab");
-    var canvas = document.createElement('canvas');
-
-    renderer = new Vex.Flow.Renderer( canvas,
-                  //Vex.Flow.Renderer.Backends.SVG);
-                  Vex.Flow.Renderer.Backends.CANVAS);
-    artist = new Vex.Flow.Artist(10, 10, 800, {scale: 0.8});
-    if (Vex.Flow.Player) {
-        opts = {};
-        //if (options) opts.soundfont_url = options.soundfont_url;
-        player = new Vex.Flow.Player(artist, opts);
-    }
-    vextab = new Vex.Flow.VexTab(artist);
-    return{
-        restrict: 'CE',
-        link: function(scope, element, attrs){
-                try {
-                    vextab.reset();
-                    artist.reset();
-                    vextab.parse(element.text());
-                    artist.render(renderer);
-                    console.log("artist = ", artist);
-                }
-                catch (e) {
-                    console.log("Error");
-                    console.log(e);
-                }
-                
-         //element.appendChild(canvas);
-         $compile(canvas)(scope);
-         //element.append(canvas);
-         //element.htmlText(canvas);
-         element.replaceWith(canvas);
-         //console.log("vextab processing");
-        }
-    }
-});
-
 
 mainApp.directive('vexchord', function($compile){
     //console.log("rendering vextab");
@@ -179,8 +121,79 @@ mainApp.controller("pageController", function($scope, $http, $route, $routeParam
     
 });
 
-mainApp.controller("blogController", function($scope, $http, $route, $routeParams){
+mainApp.controller('vextabController', ['$scope', function($scope) {
+    $scope.vextabText;
+    
+  }]);
+  
+mainApp.directive('vextabPaper', ['$compile', function($compile) {
 
+    var canvas = document.createElement('canvas');
+    renderer = new Vex.Flow.Renderer( canvas,
+                  //Vex.Flow.Renderer.Backends.RAPHAEL); //TODO support raphael
+                  Vex.Flow.Renderer.Backends.CANVAS);
+    artist = new Vex.Flow.Artist(10, 10, 800, {scale: 1});
+
+    if (Vex.Flow.Player) {
+        opts = {};
+        //if (options) opts.soundfont_url = options.soundfont_url;
+        player = new Vex.Flow.Player(artist, opts);
+    }
+    vextab = new Vex.Flow.VexTab(artist);
+
+    function link(scope, element, attrs) {
+        var vextabText;
+        function updateTab() {
+            //console.log("updating tab");
+            //console.log(vextabText);
+            try {
+                vextab.reset();
+                artist.reset();
+
+                vextab.parse(vextabText);
+                artist.render(renderer);
+                //console.log("artist = ", artist);
+            }
+            catch (e) {
+                console.log("Error");
+                console.log(e);
+            }      
+            $compile(canvas)(scope);
+            element.append(canvas);
+            //reposition player because something breaks on the default
+            if(player !== null && player !== undefined){
+                player.reset();
+                console.log("player created", player);
+                playerCanvas = element.find(".vextab-player");
+                playerCanvas.css("position", "absolute")
+                            .css("z-index", 10)
+                            .css("top", element.get(0).offsetTop)
+                            .css("left", element.get(0).offsetLeft)
+                            ;
+            }
+        }
+
+        scope.$watch(attrs.vextabPaper, function(value) {
+            //console.log("changing vextab text to: ", value);
+            if (!(value !== null && value !== undefined)){
+                value = element.text();
+                element.text("");
+            }
+            vextabText = value;
+            updateTab();
+        });
+
+    }
+
+    return {
+      link: link
+    };
+  }]);
+
+//setup the vextab interface template
+mainApp.directive('interactiveVextab', function($compile, $http){
+    return {
+        //link: link,
+        templateUrl: 'templates/vextab_editor.html'
+    };
 });
-
-
