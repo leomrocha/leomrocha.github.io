@@ -162,8 +162,7 @@ mainApp.directive('vextabPaper', ['$compile', function($compile) {
             element.append(canvas);
             //reposition player because something breaks on the default
             if(player !== null && player !== undefined){
-                player.reset();
-                console.log("player created", player);
+                console.log("player created");
                 playerCanvas = element.find(".vextab-player");
                 playerCanvas.css("position", "absolute")
                             .css("z-index", 10)
