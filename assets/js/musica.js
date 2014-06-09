@@ -61,19 +61,19 @@ mainApp.directive('vexchord', function($compile){
 mainApp.config(function($routeProvider, $locationProvider){
     $routeProvider
         .when('/', {
-            templateUrl: 'pages/aboutme.html',
+            templateUrl: 'musica/about.html',
         })
         .when('/about',{redirectTo: '/'})
         .when('/:section', {
             templateUrl: function($routeParams){
-                var path = '/pages/'+$routeParams.section+'.html';
+                var path = '/musica/'+$routeParams.section+'.html';
                 //console.log("generating path section = ", path);
                 return path;
             },
             controller: 'pageController'
         })
         .when('/:section/:post', {
-            templateUrl: 'pages/blog_post.html',
+            templateUrl: 'musica/blog_post.html',
             //TODO change the following function for the previous one. Add more generic post handling
             //templateUrl: function($routeParams){
             //    //console.log("route params = ", $routeParams);
