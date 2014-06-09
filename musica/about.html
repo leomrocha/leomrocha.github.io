@@ -13,6 +13,9 @@
 ## Me:
 **I'm Leo, I'm a Computer Engineer, I love playing my guitars and learning music**
 
+  
+    If you want to contribute, or any opinion, CONTACT ME (if you are reading this page you have my contact information).
+
 
 I am working to be able to plug my guitar to the computer, and follow exercises and games that actually listen to what I play, and lets me know if it's right or wrong
 
@@ -37,13 +40,15 @@ I have to be able to ask a teacher
 
 ### 1. Business
 
+    I will be updating the business models hypothesis this week.
+
 There is interest, you can see:
 
 http://www.reddit.com/r/musictheory/comments/1gj0w3/
 
 http://www.quora.com/Android-Applications/Is-there-an-application-like-Duolingo-for-music-education
 
-### 2. Technology
+### 2. Technology - It's possible (check below)
 
 This is what I do!!!
 
@@ -57,7 +62,76 @@ The technology is ready. Points **1** and **2** are already in a good state of t
 
 #### Examples:
 
-The transcription algorithm is quite robust, needs flash and access to your microphone. Basically it listents to you and transcodes the notes (in multi-pitch mode) or one single note (in single pitch mode) Check the examples [here](http://leomrocha.github.io/soundtools/)
+To show music sheets (and the TAB for the guitar also!):
+
+</markdown>
+
+<div vextab-paper>
+    options space=20 player=true tempo=140
+
+    tabstave
+      notation=true
+      key=A time=4/4
+
+      notes :q =|: (5/2.5/3.7/4) :8 7-5h6/3 ^3^ 5h6-7/5 ^3^ :q 7V/4 |
+      notes :8 t12p7/4 s5s3/4 :8 3s:16:5-7/5 :h p5/4
+      text :w, |#segno, ,|, :hd, , #tr
+
+
+    options space=25
+
+    tabstave
+      notation=true 
+
+      notes :q (5/4.5/5) (7/4.7/5)s(5/4.5/5) ^3^
+      notes :8 7-5/4 $.a./b.$ (5/4.5/5)h(7/5) =:|
+      notes :8 (12/5.12/4)ds(5/5.5/4)u 3b4/5
+      notes :h (5V/6.5/4.6/3.7/2) $.italic.let ring$ =|=
+
+      text :h, ,.font=Times-12-italic, D.S. al coda, |#coda
+      text :h, ,.-1, .font=Arial-14-bold,A13
+      text ++, .23, #f
+</div>
+
+
+<markdown>
+
+But, more than that, check out this interactive example, copy this text:
+
+
+    options space=20 player=true tempo=140
+
+    tabstave
+      notation=true
+      key=A time=4/4
+
+      notes :q =|: (5/2.5/3.7/4) :8 7-5h6/3 ^3^ 5h6-7/5 ^3^ :q 7V/4 |
+      notes :8 t12p7/4 s5s3/4 :8 3s:16:5-7/5 :h p5/4
+      text :w, |#segno, ,|, :hd, , #tr
+
+and paste it in the textbox input.
+
+
+
+</markdown>
+<div interactive-vextab>
+    options space=20 player=true tempo=140
+
+    tabstave notation=true time=4/4 tablature=false
+    notes Cn-D-E/4 F#/5
+</div>
+
+<markdown>
+
+Or try this other one:
+
+    options space=20 player=true tempo=140
+    tabstave notation=true time=4/4 tablature=false
+    notes Cn-D-E/4 F/5
+
+EVEN MORE: [here](http://leomrocha.github.io/test.html) an example with MIDI sound synthesis.
+
+The transcription algorithm is quite robust, needs flash and access to your microphone. Basically it listents to you and transcodes the notes (in multi-pitch mode) or one single note (in single pitch mode) If you want to chewk all the examples [here](http://leomrocha.github.io/soundtools/) and [here](http://leopanigo.net)
 
 </markdown>
 

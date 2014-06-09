@@ -123,8 +123,8 @@ mainApp.directive('vextabPaper', ['$compile', function($compile) {
     function link(scope, element, attrs) {
         var vextabText;
         function updateTab() {
-            //console.log("updating tab");
-            //console.log(vextabText);
+            console.log("updating tab");
+            console.log(vextabText);
             try {
                 vextab.reset();
                 artist.reset();
@@ -152,7 +152,7 @@ mainApp.directive('vextabPaper', ['$compile', function($compile) {
         }
 
         scope.$watch(attrs.vextabPaper, function(value) {
-            //console.log("changing vextab text to: ", value);
+            console.log("changing vextab text to: ", value);
             if (!(value !== null && value !== undefined)){
                 value = element.text();
                 element.text("");
