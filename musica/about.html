@@ -17,13 +17,13 @@
 I am working to be able to plug my guitar to the computer, and follow exercises and games that actually listen to what I play, and lets me know if it's right or wrong
 
 
-##IDEA:
+##AWESOME NEED:
 
-The idea is to be able to plug my guitar to the computer and have a personal teacher that guides and corrects me whenever I make a mistake.
+I NEED to be able to plug my guitar to the computer and have a personal teacher that guides and corrects me whenever I make a mistake.
 
 I have to be able to see the error in real time
 
-I have to be able to have a record on how am I going
+I have to be able to have a track record on how am I going
 
 I have to be able to ask a teacher
 
@@ -34,8 +34,115 @@ I have to be able to ask a teacher
 1. Business
 2. Technology
 3. Competition
-4. Marketing
+
+### 1. Business
+
+There is interest, you can see:
+
+http://www.reddit.com/r/musictheory/comments/1gj0w3/
+
+http://www.quora.com/Android-Applications/Is-there-an-application-like-Duolingo-for-music-education
+
+### 2. Technology
+
+This is what I do!!!
+
+There are 3 parts on this:
+
+1. music notation, well you can see some examples here
+2. music transcription (software that listens to you and gets what you are playing or singing)
+3. exercises!!
+
+The technology is ready. Points **1** and **2** are already in a good state of the art (though there are things to do yet). We need to make the third part!
+
+#### Examples:
+
+The transcription algorithm is quite robust, needs flash and access to your microphone. Basically it listents to you and transcodes the notes (in multi-pitch mode) or one single note (in single pitch mode) Check the examples [here](http://leomrocha.github.io/soundtools/)
 
 </markdown>
+
+<div ng-controller="toolsController">
+    <ul class="nav nav-tabs">
+        <li ng-repeat="tool in toolsList">
+            <a ng-click='setSelectedTool(tool)' >
+	            <i class="menu-icon fa fa-music"></i>
+	            <span class="menu-text"> {{tool.title}} </span>
+            </a>
+
+            <b class="arrow"></b>
+        </li>
+    </ul>
+
+    <div class="main-content">
+
+	    <!-- /section:basics/content.breadcrumbs -->
+	    <div class="page-content">
+		    <div class="row">
+			    <div class="col-xs-12">
+				    <!-- PAGE CONTENT BEGINS -->
+
+    <!-- #section:pages/error -->
+				    <div class="center">
+					    <div class="well">
+						    <h1 class="grey lighter smaller">
+							    <span class="blue bigger-125">
+                                    {{selectedTool.title}}
+							    </span>
+						    </h1>
+
+						    <hr />
+						    <h3 class="lighter smaller">
+							    {{selectedTool.subtitle}}
+						    </h3>
+
+						    <div class="space"></div>
+
+						    <div>
+							    {{selectedTool.description}}
+						    </div>
+
+						    <hr />
+						    <div class="space"></div>
+
+						    <div class="center">
+                                <div>
+                                    <object id="{{selectedTool.title}}" width="{{selectedTool.width}}" height="{{selectedTool.height}}" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0"><param name="pluginspage" value="http://www.adobe.com/go/getflashplayer" /><embed id="{{selectedTool.title}}" width="{{selectedTool.width}}" height="{{selectedTool.height}}" type="application/x-shockwave-flash" embed-src="{{selectedTool.source}}" pluginspage="http://www.adobe.com/go/getflashplayer" /></object>
+
+                                </div>
+						    </div>
+					    </div>
+				    </div>
+
+				    <!-- /section:pages/error -->
+
+                    <hl/>                
+				    <!-- PAGE CONTENT ENDS -->
+			    </div><!-- /.col -->
+		    </div><!-- /.row -->
+	    </div><!-- /.page-content -->
+    </div><!-- /.main-content -->
+</div>
+<markdown>
+
+
+
+### 3. Competition
+
+There are some other direct and indirect competitors, two years ago when I first started with this idea, there where some attempts, but no real things.
+
+Now there are:
+
+http://musikata.com/request_invitation.html  (more like I propose)
+
+https://itunes.apple.com/us/app/tenuto/id459313476?mt=8 
+
+http://www.musictheory.net/ (only theory, no instrument playing)
+
+
+
+
+</markdown>
+
+
 
 </div>

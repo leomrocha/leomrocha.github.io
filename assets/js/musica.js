@@ -175,3 +175,43 @@ mainApp.directive('interactiveVextab', function($compile, $http){
         templateUrl: 'templates/vextab_editor.html'
     };
 });
+
+
+
+mainApp.controller('toolsController', ['$scope', function($scope){
+
+    //for testing here, TODO set custom domain in github for accessing this as a path
+    //and of course eliminate this ugly json from the JS file
+    $scope.toolsList = {
+        "Tuner":{
+          "title" : "Tuner",
+          "subtitle" : "Real-time, web based guitar tuner",
+          "description": "A tuner for my guitar, and the result of many graphic iterations and tests to make it nice enough for my eyes. The toughest work is in the work behind the algorithm to make it as accurate and as fast to take it to the current state.",
+          "icon-class":"fa-music",
+          "width": 320,
+          "height": 480,
+          "source": "https://github.com/leomrocha/soundtools/blob/master/gui-tuner/bin/simple-gui-tuner.swf?raw=true",
+          "help": "https://raw.githubusercontent.com/leomrocha/soundtools/master/resources/images/Tuner_cheatsheet_en.png"
+        },
+        "PitchTracker":{
+          "title" : "PitchTracker",
+          "subtitle" : "Real-time, web based advanced pitch tracker",
+          "description": "A real-time pitch tracker that gives the current note, the error respect the note, and either the frequency graph or the music sheet real-time transcription",
+          "icon-class":"fa-music",
+          "width": 640,
+          "height": 640,
+          "source": "https://github.com/leomrocha/soundtools/blob/master/PitchTracker/bin/PitchTracker.swf?raw=true",
+          "help": "https://raw.githubusercontent.com/leomrocha/soundtools/master/resources/images/Voice-Visualize_cheatsheet_en.png"
+        }
+    };
+
+    //set the selected tool as the first one
+    $scope.selectedTool = $scope.toolsList["Tuner"];
+           
+    //to be able to reselect later:
+    $scope.setSelectedTool =  function(tool) {
+       $scope.selectedTool = tool;
+    };
+    
+    
+}]);
