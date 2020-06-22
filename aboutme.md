@@ -1,16 +1,20 @@
 ---
 layout: page
-title: About me
-subtitle: Why you'd want to go on a date with me
+title: About Me
 ---
 
-My name is Inigo Montoya. I have the following qualities:
+My name is Leonardo M. Rocha and I'm dedicated to software engineering in Data Engineering, Artificial Intelligence, Machine Learning and Data Analysis.
 
-- I rock a great mustache
-- I'm extremely loyal to my family
 
-What else do you need?
+### A bit about me
 
-### my history
+I have worked in research and private enterprise environments for more than 12 years now which has given me a wide experience in different environments, techniques and technologies. 
 
-To be honest, I'm having some trouble remembering right now, so why don't you just watch [my movie](https://en.wikipedia.org/wiki/The_Princess_Bride_%28film%29) and it will answer **all** your questions.
+Currently I work mostly with [Python](https://www.python.org/) and [Scala](https://www.scala-lang.org/) (with [Spark](https://spark.apache.org/)) programming languages. For Deep learning I mostly use [PyTorch](https://pytorch.org/)
+
+I am also fluent in Spanish, French and English and hold certifications in Agile methodologies and have experience working on-site and remotly.
+
+
+Don't hesitate to [contact](./contact/) me if you have any questions or project that I might be of help.
+
+
