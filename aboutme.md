@@ -18,3 +18,8 @@ I am also fluent in Spanish, French and English and hold certifications in Agile
 Don't hesitate to [contact](./contact/) me if you have any questions or project that I might be of help.
 
 
+<div >
+    <!-- <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScNpCeijn4qhZ4vPD-GfI5MX53qZZ94ujOevkRoksZx5sXzeg/viewform?embedded=true" width="640" height="1072" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe> -->
+    <!-- <embed id="contact_form" type="text/html" src="https://docs.google.com/forms/d/e/1FAIpQLScNpCeijn4qhZ4vPD-GfI5MX53qZZ94ujOevkRoksZx5sXzeg/viewform?embedded=true"  width="100%" height="1200"> -->
+
+</div>
