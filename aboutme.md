@@ -12,7 +12,7 @@ I have worked in research and private enterprise environments for more than 12 y
 
 Currently I work mostly with [Python](https://www.python.org/) and [Scala](https://www.scala-lang.org/) (with [Spark](https://spark.apache.org/)) programming languages. For Deep learning I mostly use [PyTorch](https://pytorch.org/)
 
-I am also fluent in Spanish, French and English and hold certifications in Agile methodologies and have experience working on-site and remotly.
+I am also fluent in Spanish, French and English and hold certifications in Agile methodologies and have experience working on-site and remotely.
 
 
 Don't hesitate to [contact](./contact/) me if you have any questions or project that I might be of help.
