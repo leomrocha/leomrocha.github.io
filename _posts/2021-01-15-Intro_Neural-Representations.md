@@ -16,7 +16,9 @@ In the spirit of having a fresh view I started from the begining, and studied th
 
 Then did some studies and experiments on the subject which now I'm going to be releasing in a way that my time allows (which is in a blog post form). The project will be develped in [this repository](https://github.com/leomrocha/neural-representations).
 
-This page lists only the first part of the study, without proposing any new encoding mechanism. The Encoding propositions will be added in a future post.
+While this studies goals were only personal and dedicated to understanding more on how the brain works encoding and decoding information, it gave me some ideas to test on how to encode information as input for Artificial Neural Networks, which led to more studies into the field of encoding and decoding. 
+
+This page lists only the first part of the study on how information can be encoded, combined and extracted, without proposing any new encoding mechanism. The Encoding propositions will be added in future posts.
 
 This document will be updated when each new page is ready and the links added to the following list
 
