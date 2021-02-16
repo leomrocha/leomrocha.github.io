@@ -25,5 +25,4 @@ This document will be updated when each new page is ready and the links added to
 
 1. [An Introduction to Scalar Representations in Neural Models ](https://leomrocha.github.io/neural-representations/NeuralModels-Introduction.html). This shows the basic concepts on which the rest of the studies are based.
 2. [Sparse Distributed Representations of Scalar Values on Non Spiking Networks](#todo) TBD
-3. [Sparse Distributed Representations of Vector Values on Non Spiking Networks](#todo) TBD
-4. [Combining concepts, Binding and Unbinding Vectors](#todo)
+3. [Combining concepts, Binding and Unbinding Vectors](#todo) TBD
