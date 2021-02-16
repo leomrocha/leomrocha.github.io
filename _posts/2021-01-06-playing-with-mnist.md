@@ -25,11 +25,14 @@ All the original (and dirty) code can be found in my [Minibrain repo](https://gi
 
 ## Conclusions
 
-As I expected, due to the number of parameters the performance of ColumNet was much better than the simple FC network, even at shallower depths (less layers). There is a common practice in the DL world to use one single type of activation, the brain does not work that way, and I believe that neither should the architectures that we build, but there is a practical part in which different activation functions have different computation costs (and different problems), having a **ColumNet** kind of solves one part of the vanishing gradient issue.
+As I expected, due to the number of parameters the performance of ColumNet was much better than the simple FC network, even at shallower depths (less layers). 
 
-Also as expected, the deeper the network, the better the performance, but one must be wary of this for such small dataset.
+There is a common practice in the DL world to use one single type of activation, the brain does not work that way, and I believe that neither should the architectures that we build, but there is a practical part in which different activation functions have different computation costs (and different problems), having a **ColumNet** kind of solves one part of the vanishing gradient issue and increments the representation power. However this comes at the expense of training time.
 
-The SparseNet did converge and work, but the loss was not comparable, I would have to check the code and change the loss to be able to compare it. If I decide to do it in the future I will publish the results here and modify this post.
+Also as expected, the deeper the network, the better the performance, but one must be wary of this for such small dataset and other more complex datasets have been studied by the scientific community.
 
-It was a nice experience and was followed by another experiment on using multiple resolutions for a single input image and followed by other experiments on different types of encodings.
+The SparseNet did converge and work, but the loss was not comparable, I would have to check the code and change the loss to be able to compare it. If I decide to do it in the future I will publish the results here and modify this post. The training was also slower, there are libraries like [cuSPARSE](https://developer.nvidia.com/cusparse) that deal with sparse matrix operations, but this topic is still a weak point for hardware (even though support has been incrementally getting better)
+
+
+As a final word, it was a nice experience and was followed by another experiment on using multiple resolutions for a single input image and followed by other experiments on different types of encodings. The fact of reviewing it a bit now and re-launching the experiments with a few code tweaks (to adapt to changes in the pytorch library) but without changing the functionality was also interesting and brought back nice memories.
 
