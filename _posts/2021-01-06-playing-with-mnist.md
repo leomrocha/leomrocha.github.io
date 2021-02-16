@@ -25,7 +25,7 @@ All the original (and dirty) code can be found in my [Minibrain repo](https://gi
 
 ## Conclusions
 
-As I expected, due to the number of parameters the performance of ColumNet was much better than the simple FC network, even at shallower depths (less layers). 
+As I expected, due to the number of parameters the performance of ColumNet was much better than the simple FC network, even at shallower depths (less layers). There is a common practice in the DL world to use one single type of activation, the brain does not work that way, and I believe that neither should the architectures that we build, but there is a practical part in which different activation functions have different computation costs (and different problems), having a **ColumNet** kind of solves one part of the vanishing gradient issue.
 
 Also as expected, the deeper the network, the better the performance, but one must be wary of this for such small dataset.
 
