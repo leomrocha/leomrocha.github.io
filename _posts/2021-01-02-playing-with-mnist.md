@@ -2,7 +2,7 @@
 layout: post
 title: Playing with MNIST
 subtitle: Trying different architectures
-tags: [datasets, NLP, MNIST]
+tags: [datasets, CV, MNIST]
 ---
 
 ## Introduction
