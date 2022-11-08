@@ -23,7 +23,7 @@ I make here available what I have tried with some or minimal explanations but wi
 
 All the original (and dirty) code on image autoencoders can be found in the [image directory](https://github.com/leomrocha/minibrain/blob/master/sensors/image/) of my [Minibrain repo](https://github.com/leomrocha/minibrain).
 
-* [Convolutional Autoencoders (CAEs)](https://leomrocha.github.io/minibrain/ConvAutoEncoderTest)
+* [Convolutional Autoencoders (CAEs)](https://leomrocha.github.io/minibrain/ConvAutoEncoderTest.html)
 * [MultiResolution Convolutional Autoencoders](https://leomrocha.github.io/minibrain/MultiResConvAutoEncoderTest.html)
 * [Variational Autoencoders (VAEs)](https://github.com/leomrocha/minibrain/blob/master/sensors/image/vae.py) - Source code only, there is no notebook for the full experimentation available
 
